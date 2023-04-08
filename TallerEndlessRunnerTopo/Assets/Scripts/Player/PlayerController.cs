@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     float distancia = 3f; //Distancia entre carriles
 
     public float forwardSpeed; //Velocidad horizontal
+
+
     int speed = 20; //velocidad vertical (transicion entre carriles) para mas fluidez
 
     //Raycast
