@@ -4553,6 +4553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2851346215717193337}
   - component: {fileID: 7605110431481819542}
+  - component: {fileID: 4661189579680822599}
   m_Layer: 0
   m_Name: Nivel1
   m_TagString: Untagged
@@ -4605,6 +4606,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &4661189579680822599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8706580758621145425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d38f91991cabb46b59096841d8cbda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChunkDestruictionPoint: {fileID: 0}
 --- !u!1 &8767771459675887304
 GameObject:
   m_ObjectHideFlags: 0
