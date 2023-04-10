@@ -639,7 +639,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1711712398, guid: 445f456e4b154514898d79d71b55c05f, type: 3}
+  m_Sprite: {fileID: 724523897, guid: 0dca292f9edf25f4dac747d369c277dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimation: {fileID: 652612341}
-  forwardSpeed: 3
+  forwardSpeed: 1.5
   RayDistance: 4
 --- !u!1 &1794230814 stripped
 GameObject:
