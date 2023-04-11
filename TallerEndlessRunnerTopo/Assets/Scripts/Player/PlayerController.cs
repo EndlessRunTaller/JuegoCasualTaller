@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController controller;
     public PlayerAnimation playerAnimation;
-    private Vector2 direction;
+    public ScoreManager scoreManager;
 
-    int carril = 1; //carriles, 0 abajo, 1 centro, 2 arriba
-    float distancia = 3f; //Distancia entre carriles
+    private Vector2 targetPos;
+    private float distanciaY = 3f; //Distancia entre carriles
 
-    public float forwardSpeed; //Velocidad horizontal
+    private int speed = 50; //velocidad vertical (transicion entre carriles) para mas fluidez
 
+    public int health = 3;
 
-    int speed = 20; //velocidad vertical (transicion entre carriles) para mas fluidez
 
     //Raycast
     public float RayDistance;
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        controller = GetComponent<CharacterController>();
         RaycastChracterUp = transform.Find("RaycastUp");
         RaycastChracterDown = transform.Find("RaycastDown");
     }
@@ -31,40 +29,44 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction.x = forwardSpeed;
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        
+        if(scoreManager.scoreCount < 100)
         {
-            carril++;
-            if(carril == 3)
+            float MaxAltura = 3f;
+            float minAltura = -3f;
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxAltura)
             {
-                carril = 2;
+                targetPos = new Vector2(transform.position.x, transform.position.y + distanciaY);
+                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minAltura)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
+                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
             }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (scoreManager.scoreCount > 100)
         {
-            carril--;
-            if (carril == -1)
+            float MaxAltura = 3f;
+            float minAltura = -6f;
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxAltura)
             {
-                carril = 0;
+                targetPos = new Vector2(transform.position.x, transform.position.y + distanciaY);
+                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minAltura)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
+                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
             }
         }
 
-
-        Vector2 targePosition = transform.position.x * transform.right;
-
-        if(carril == 0)
-        {
-            targePosition += Vector2.down * distancia;
-        }
-        else if(carril == 2){
-            targePosition += Vector2.up * distancia;
-        }
-        controller.Move(direction * Time.fixedDeltaTime);
-        transform.position = Vector2.Lerp(transform.position,targePosition,speed*Time.deltaTime);
-        TocarObjetoArriba();
-        TocarObjetoAbajo();
         AnimacionCorrer();
+
+        
 
     }
 
@@ -90,6 +92,6 @@ public class PlayerController : MonoBehaviour
     }
     void AnimacionCorrer()
     {
-        playerAnimation.myAnimator.SetFloat("Correr", forwardSpeed);
+        playerAnimation.myAnimator.SetFloat("Correr", 1.6f);
     }
 }
