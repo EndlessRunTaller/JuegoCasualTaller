@@ -15,8 +15,6 @@ public class ScoreManager : MonoBehaviour
 
     public bool scooreIncreasing;
 
-    public GameController gameController;
-
     void Start()
     {
         
@@ -31,13 +29,13 @@ public class ScoreManager : MonoBehaviour
         }
         
 
-        if(scoreCount > gameController.Maxscore2)
+        if(scoreCount > GameController.current.MaxScore)
         {
-            gameController.Maxscore2 = scoreCount;
+            GameController.current.MaxScore = scoreCount;
         }
 
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
-        MaxScoreText.text = "High score: " + Mathf.Round(gameController.Maxscore2);
+        MaxScoreText.text = "High score: " + Mathf.Round(GameController.current.MaxScore);
 
 
     }

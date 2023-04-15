@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public static int Maxscore = 0;
-    public float Maxscore2;
+    public static GameController current;
+    public float MaxScore;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if(current == null)
+        {
+            current = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
