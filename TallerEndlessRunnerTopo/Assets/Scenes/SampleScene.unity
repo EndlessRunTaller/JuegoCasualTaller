@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1032215451}
   - component: {fileID: 1032215450}
   m_Layer: 0
-  m_Name: niebla
+  m_Name: FondoNegro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +444,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -116348973
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -700838650, guid: 0b512f37fbc8f734688b46cbec3801aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

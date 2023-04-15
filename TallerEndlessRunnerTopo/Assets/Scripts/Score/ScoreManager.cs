@@ -10,11 +10,12 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI MaxScoreText;
 
     public float scoreCount;
-    public float MaxScoreCount;
 
     public float pointsPerSecond;
 
     public bool scooreIncreasing;
+
+    public GameController gameController;
 
     void Start()
     {
@@ -24,8 +25,20 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreCount += pointsPerSecond * Time.deltaTime;
+        if (scooreIncreasing)
+        {
+            scoreCount += pointsPerSecond * Time.deltaTime;
+        }
+        
+
+        if(scoreCount > gameController.Maxscore2)
+        {
+            gameController.Maxscore2 = scoreCount;
+        }
+
         scoreText.text = "Score: " + Mathf.Round(scoreCount);
-        MaxScoreText.text = "High score: " + Mathf.Round(MaxScoreCount);
+        MaxScoreText.text = "High score: " + Mathf.Round(gameController.Maxscore2);
+
+
     }
 }
