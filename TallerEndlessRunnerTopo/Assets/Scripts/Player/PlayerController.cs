@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
         
-        if(scoreManager.scoreCount < 100)
+        if(scoreManager.scoreCount < 200)
         {
             float MaxAltura = 3f;
             float minAltura = -3f;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimation.myAnimator.SetTrigger("CambiarCarril");
             }
         }
-        if (scoreManager.scoreCount > 100)
+        if (scoreManager.scoreCount > 200)
         {
             float MaxAltura = 0f;
             float minAltura = -6f;

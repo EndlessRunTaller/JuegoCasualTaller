@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
         lastPlayerPosition = theplayer.transform.position;
 
 
-        if (scoreManager.scoreCount > 100)
+        if (scoreManager.scoreCount > 200)
         {
             Camera.main.orthographicSize = 6;
             transform.position = Vector3.Lerp(transform.position, punto1.position, Time.deltaTime * 5);

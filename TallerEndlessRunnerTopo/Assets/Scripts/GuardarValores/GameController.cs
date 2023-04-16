@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController current;
     public float MaxScore;
+    public int insectos = 0;
 
     // Start is called before the first frame update
     private void Awake()
