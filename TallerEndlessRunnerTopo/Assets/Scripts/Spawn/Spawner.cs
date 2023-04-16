@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] obstaclePattern;
+    public SpawnInsecto spawnInsecto;
 
     private float timeBtwSpawn;
     public float startTimeSpawn;
@@ -21,11 +22,13 @@ public class Spawner : MonoBehaviour
             if(startTimeSpawn > minTime)
             {
                 startTimeSpawn -= decreaseTime;
+                spawnInsecto.Spawn();
             }
         }
         else
         {
             timeBtwSpawn -= Time.deltaTime;
+            
         }
     }
 }
