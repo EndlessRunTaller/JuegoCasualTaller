@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
 
     private int speed = 50; //velocidad vertical (transicion entre carriles) para mas fluidez
 
-    public int health = 1;
     public GameObject Player;
     public bool Vida = true;
 
@@ -103,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
     public void Morir()
     {
-        if (health == 0)
+        if (GameController.current.Vida == 0)
         {
             Player.SetActive(false);
             Vida = false;
