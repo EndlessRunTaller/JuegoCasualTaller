@@ -14,7 +14,7 @@ public class Insecto : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        InsectosText.text = "Insectos: " + GameController.current.insectos.ToString();
+        InsectosText.text = GameController.current.insectos.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
