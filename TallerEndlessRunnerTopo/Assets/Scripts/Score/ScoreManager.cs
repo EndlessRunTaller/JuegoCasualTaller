@@ -11,7 +11,6 @@ public class ScoreManager : MonoBehaviour
 
     public float scoreCount;
 
-    public float pointsPerSecond;
 
     public bool scooreIncreasing;
 
@@ -25,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scooreIncreasing)
         {
-            scoreCount += pointsPerSecond * Time.deltaTime;
+            scoreCount += GameController.current.pointsPerSecond * Time.deltaTime;
         }
         
 

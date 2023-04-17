@@ -1211,7 +1211,6 @@ MonoBehaviour:
   scoreText: {fileID: 216632850}
   MaxScoreText: {fileID: 2131051131}
   scoreCount: 0
-  pointsPerSecond: 5
   scooreIncreasing: 1
 --- !u!1 &1141234007
 GameObject:
@@ -2313,6 +2312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1996420020138815327, guid: 01727461d842ce14aae46bd6ff2d01c0, type: 3}
+      propertyPath: pointsPerSecond
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6618399990318714285, guid: 01727461d842ce14aae46bd6ff2d01c0, type: 3}
       propertyPath: m_Name
       value: GameController
