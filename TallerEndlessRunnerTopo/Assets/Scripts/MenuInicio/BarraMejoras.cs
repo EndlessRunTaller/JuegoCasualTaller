@@ -145,7 +145,63 @@ public class BarraMejoras : MonoBehaviour
             barraMejoraPotenciador[5].SetActive(true);
             Multiplicador.sprite = x6;
         }
+    }
 
-
+    public void MejoraVision()
+    {
+        if (GameController.current.NivelVision == 0)
+        {
+            barraMejoraVision[0].SetActive(true);
+            barraMejoraVision[1].SetActive(false);
+            barraMejoraVision[2].SetActive(false);
+            barraMejoraVision[3].SetActive(false);
+            barraMejoraVision[4].SetActive(false);
+            barraMejoraVision[5].SetActive(false);
+        }
+        else if (GameController.current.NivelVision == 1)
+        {
+            barraMejoraVision[0].SetActive(false);
+            barraMejoraVision[1].SetActive(true);
+            barraMejoraVision[2].SetActive(false);
+            barraMejoraVision[3].SetActive(false);
+            barraMejoraVision[4].SetActive(false);
+            barraMejoraVision[5].SetActive(false);
+        }
+        else if (GameController.current.NivelVision == 2)
+        {
+            barraMejoraVision[0].SetActive(false);
+            barraMejoraVision[1].SetActive(false);
+            barraMejoraVision[2].SetActive(true);
+            barraMejoraVision[3].SetActive(false);
+            barraMejoraVision[4].SetActive(false);
+            barraMejoraVision[5].SetActive(false);
+        }
+        else if (GameController.current.NivelVision == 3)
+        {
+            barraMejoraVision[0].SetActive(false);
+            barraMejoraVision[1].SetActive(false);
+            barraMejoraVision[2].SetActive(false);
+            barraMejoraVision[3].SetActive(true);
+            barraMejoraVision[4].SetActive(false);
+            barraMejoraVision[5].SetActive(false);
+        }
+        else if (GameController.current.NivelVision == 4)
+        {
+            barraMejoraVision[0].SetActive(false);
+            barraMejoraVision[1].SetActive(false);
+            barraMejoraVision[2].SetActive(false);
+            barraMejoraVision[3].SetActive(false);
+            barraMejoraVision[4].SetActive(true);
+            barraMejoraVision[5].SetActive(false);
+        }
+        else if (GameController.current.NivelVision == 5)
+        {
+            barraMejoraVision[0].SetActive(false);
+            barraMejoraVision[1].SetActive(false);
+            barraMejoraVision[2].SetActive(false);
+            barraMejoraVision[3].SetActive(false);
+            barraMejoraVision[4].SetActive(false);
+            barraMejoraVision[5].SetActive(true);
+        }
     }
 }

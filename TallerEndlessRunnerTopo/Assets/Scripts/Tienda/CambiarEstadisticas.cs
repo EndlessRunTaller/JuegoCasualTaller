@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CambiarEstadisticas : MonoBehaviour
 {
-
+    public TextMeshProUGUI PrecioVida, PrecioMultiplicador, PrecioVision;
+    public int precioVida, precioMultiplicador, precioVision;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class CambiarEstadisticas : MonoBehaviour
     {
         DarMultiplicador();
         DarVida();
+        DarVision();
     }
 
     public void BotonMultiplicador()
@@ -33,6 +36,14 @@ public class CambiarEstadisticas : MonoBehaviour
         {
             GameController.current.NivelVIda = GameController.current.NivelVIda + 1;
             GameController.current.insectos = GameController.current.insectos - 200;
+        }
+    }
+    public void BotonVision()
+    {
+        if(GameController.current.insectos >= 50)
+        {
+            GameController.current.NivelVision = GameController.current.NivelVision + 1;
+            GameController.current.insectos = GameController.current.insectos - 50;
         }
     }
     public void DarMultiplicador()
@@ -88,6 +99,40 @@ public class CambiarEstadisticas : MonoBehaviour
         else if (GameController.current.NivelVIda == 5)
         {
             GameController.current.Vida = 6;
+        }
+    }
+
+    public void DarVision()
+    {
+        if(GameController.current.NivelVision == 0)
+        {
+            GameController.current.Ejex = 5;
+            GameController.current.Ejey = 8;
+        }
+        else if(GameController.current.NivelVision == 1)
+        {
+            GameController.current.Ejex = 6;
+            GameController.current.Ejey = 8;
+        }
+        else if (GameController.current.NivelVision == 2)
+        {
+            GameController.current.Ejex = 6;
+            GameController.current.Ejey = 8;
+        }
+        else if (GameController.current.NivelVision == 3)
+        {
+            GameController.current.Ejex = 7;
+            GameController.current.Ejey = 9;
+        }
+        else if (GameController.current.NivelVision == 4)
+        {
+            GameController.current.Ejex = 8;
+            GameController.current.Ejey = 10;
+        }
+        else if(GameController.current.NivelVision == 5)
+        {
+            GameController.current.Ejex = 9;
+            GameController.current.Ejey = 11;
         }
     }
 }
