@@ -39,15 +39,15 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxAltura)
             {
                 targetPos = new Vector2(transform.position.x, transform.position.y + distanciaY);
-                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
+                playerAnimation.myAnimator.SetTrigger("Arriba");
             }
             if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minAltura)
             {
                 targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
-                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
+                playerAnimation.myAnimator.SetTrigger("Abajo");
             }
         }
-        if (scoreManager.scoreCount > 200)
+        if (scoreManager.scoreCount > 200 && scoreManager.scoreCount < 500)
         {
             float MaxAltura = 0f;
             float minAltura = -6f;
@@ -55,14 +55,34 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxAltura)
             {
                 targetPos = new Vector2(transform.position.x, transform.position.y + distanciaY);
-                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
+                playerAnimation.myAnimator.SetTrigger("Arriba");
             }
             if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minAltura)
             {
                 targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
-                playerAnimation.myAnimator.SetTrigger("CambiarCarril");
+                playerAnimation.myAnimator.SetTrigger("Abajo");
             }
             if(transform.position.y == 3)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
+            }
+        }
+        if (scoreManager.scoreCount > 500)
+        {
+            float MaxAltura = -3f;
+            float minAltura = -9f;
+
+            if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < MaxAltura)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y + distanciaY);
+                playerAnimation.myAnimator.SetTrigger("Arriba");
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minAltura)
+            {
+                targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
+                playerAnimation.myAnimator.SetTrigger("Abajo");
+            }
+            if (transform.position.y == 0)
             {
                 targetPos = new Vector2(transform.position.x, transform.position.y - distanciaY);
             }

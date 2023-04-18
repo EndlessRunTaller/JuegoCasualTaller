@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if(scoreManager.scoreCount < 190)
+        if(scoreManager.scoreCount < 185)
         {
             if (timeBtwSpawn <= 0)
             {
@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
 
             }
         }
-        else if(scoreManager.scoreCount > 200 && scoreManager.scoreCount < 500)
+        else if(scoreManager.scoreCount > 200 && scoreManager.scoreCount < 485)
         {
             if (timeBtwSpawn <= 0)
             {
@@ -69,7 +69,33 @@ public class Spawner : MonoBehaviour
 
             }
         }
-        
+        else if (scoreManager.scoreCount > 500)
+        {
+            if (timeBtwSpawn <= 0)
+            {
+                startTimeSpawn = 1f;
+                int numeroX1 = GenerarNumeroAleatorioX();
+                int numeroY1 = GenerarNumeroAleatorioYNivel3();
+                if (numeroX1 == spawnInsecto.GenerarNumeroAleatorioX())
+                {
+                    numeroX1 = numeroX1 + 5;
+                }
+
+                Instantiate(Obstaculo[2], transform.position + new Vector3(numeroX1, numeroY1, 0), transform.rotation);
+                spawnInsecto.SpawnNivel3();
+                timeBtwSpawn = startTimeSpawn;
+                if (startTimeSpawn > minTime)
+                {
+                    startTimeSpawn -= decreaseTime;
+                }
+            }
+            else
+            {
+                timeBtwSpawn -= Time.deltaTime;
+
+            }
+        }
+
     }
 
     //Piedra Random
@@ -89,6 +115,12 @@ public class Spawner : MonoBehaviour
     public int GenerarNumeroAleatorioYNivel2()
     {
         int[] valores = new int[] { -6, 0, -3 };
+        int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
+        return valores[indiceAleatorio];
+    }
+    public int GenerarNumeroAleatorioYNivel3()
+    {
+        int[] valores = new int[] { -6, -9, -3 };
         int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
         return valores[indiceAleatorio];
     }

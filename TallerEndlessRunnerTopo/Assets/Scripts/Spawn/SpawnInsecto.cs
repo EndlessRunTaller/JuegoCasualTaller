@@ -14,6 +14,10 @@ public class SpawnInsecto : MonoBehaviour
     {
         Instantiate(insecto[1], transform.position + new Vector3(GenerarNumeroAleatorioX(), GenerarNumeroAleatorioYNivel2(), 0), transform.rotation);
     }
+    public void SpawnNivel3()
+    {
+        Instantiate(insecto[2], transform.position + new Vector3(GenerarNumeroAleatorioX(), GenerarNumeroAleatorioYNivel3(), 0), transform.rotation);
+    }
 
 
     //Insecto Random
@@ -35,6 +39,12 @@ public class SpawnInsecto : MonoBehaviour
     public int GenerarNumeroAleatorioYNivel2()
     {
         int[] valores = new int[] { -6, 0, -3 };
+        int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
+        return valores[indiceAleatorio];
+    }
+    public int GenerarNumeroAleatorioYNivel3()
+    {
+        int[] valores = new int[] { -6, -9, -3 };
         int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
         return valores[indiceAleatorio];
     }

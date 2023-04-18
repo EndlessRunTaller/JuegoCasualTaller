@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnCalaveras : MonoBehaviour
 {
-    public GameObject huesos,calavera;
+    public GameObject huesos,calavera,arbusto;
 
     private float timeBtwSpawn;
     public float startTimeSpawn;
@@ -42,13 +42,27 @@ public class SpawnCalaveras : MonoBehaviour
             timeBtwSpawn -= Time.deltaTime;
 
         }
+        if (timeBtwSpawn <= 0)
+        {
+            Instantiate(arbusto, transform.position + new Vector3(15, 3.1f, 0), transform.rotation);
+            timeBtwSpawn = startTimeSpawn;
+            if (startTimeSpawn > minTime)
+            {
+                startTimeSpawn -= decreaseTime;
+            }
+        }
+        else
+        {
+            timeBtwSpawn -= Time.deltaTime;
 
-        
+        }
+
+
     }
 
     float PosicionY()
     {
-        float[] possibleValues = { -0.8f,-3.5f,-5.1f };
+        float[] possibleValues = { -0.8f,-3.5f,-5.1f,-2.5f,-2f,-3f,-3.5f };
         float randomNumber = possibleValues[new System.Random().Next(possibleValues.Length)];
         return randomNumber;
     }

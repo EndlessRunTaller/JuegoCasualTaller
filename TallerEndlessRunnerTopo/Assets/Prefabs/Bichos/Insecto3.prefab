@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5252492075933244760}
   - component: {fileID: 3287491399845706655}
-  - component: {fileID: 1737658236698254706}
+  - component: {fileID: 908656880453326818}
   m_Layer: 0
-  m_Name: Insecto2
+  m_Name: Insecto3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,10 +48,10 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.21831128}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &1737658236698254706
+  m_Radius: 0.4302304
+--- !u!114 &908656880453326818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 829637822476829377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b906b9b440473248a5b35bb24b4bbd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d4112b02740b7447b9b58c05976971a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db44760c5d59dcd4d9498f75bfadd3cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50ff7ded260f7af4bbdbdf1c7eb6ba09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
