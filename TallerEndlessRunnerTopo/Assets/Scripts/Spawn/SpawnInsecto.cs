@@ -4,31 +4,39 @@ using UnityEngine;
 
 public class SpawnInsecto : MonoBehaviour
 {
-    public GameObject insecto;
-    private int Carriles;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] insecto;
+    public void SpawnNivel1()
     {
-        
+        Instantiate(insecto[0], transform.position + new Vector3(GenerarNumeroAleatorioX(), GenerarNumeroAleatorioYNivel1(), 0), transform.rotation);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnNivel2()
     {
-        Carriles = GenerarNumeroAleatorioY();
+        Instantiate(insecto[1], transform.position + new Vector3(GenerarNumeroAleatorioX(), GenerarNumeroAleatorioYNivel2(), 0), transform.rotation);
     }
 
-    public void Spawn()
-    {
-        Instantiate(insecto, transform.position + new Vector3(0, Carriles, 0), transform.rotation);
-    }
 
-    public int GenerarNumeroAleatorioY()
+    //Insecto Random
+
+    public int GenerarNumeroAleatorioX()
+    {
+        int[] valores = new int[] { 10, 11, 12, 13, 14, 15 };
+        int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
+        return valores[indiceAleatorio];
+    }
+    public int GenerarNumeroAleatorioYNivel1()
     {
         int[] valores = new int[] { 3,0,-3 };
         int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
         return valores[indiceAleatorio];
     }
+
+
+    public int GenerarNumeroAleatorioYNivel2()
+    {
+        int[] valores = new int[] { -6, 0, -3 };
+        int indiceAleatorio = UnityEngine.Random.Range(0, valores.Length);
+        return valores[indiceAleatorio];
+    }
+
 }
