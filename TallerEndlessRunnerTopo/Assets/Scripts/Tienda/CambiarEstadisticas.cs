@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CambiarEstadisticas : MonoBehaviour
 {
     public TextMeshProUGUI PrecioVida, PrecioMultiplicador, PrecioVision;
     public int precioVida, precioMultiplicador, precioVision;
+    public Button botonVida, botonMulti, botonVision;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +58,9 @@ public class CambiarEstadisticas : MonoBehaviour
         }
         else
         {
-
+            ColorBlock cbMulti = botonMulti.colors;
+            cbMulti.pressedColor = Color.red;
+            botonMulti.colors = cbMulti;
         }
     }
     public void BotonVida()
@@ -93,7 +97,9 @@ public class CambiarEstadisticas : MonoBehaviour
         }
         else
         {
-
+            ColorBlock cbVida = botonVida.colors;
+            cbVida.pressedColor = Color.red;
+            botonVida.colors = cbVida;
         }
     }
     public void BotonVision()
@@ -130,7 +136,9 @@ public class CambiarEstadisticas : MonoBehaviour
         }
         else
         {
-
+            ColorBlock cbVision = botonVision.colors;
+            cbVision.pressedColor = Color.red;
+            botonVision.colors = cbVision;
         }
     }
     public void DarMultiplicador()
